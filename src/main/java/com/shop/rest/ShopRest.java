@@ -84,16 +84,12 @@ public class ShopRest {
 		return son;
 	}
 	@PostMapping("/newproduct")
-	public String newproduct(@RequestBody Product product) {
-		Integer categoryid=product.getId_category();
-		List <Category> categories = categoryc.findAll();
-		for (  Category x : categories ) {
-			if(x.getId_father()==categoryid) {
-				return"In this part is not posible include a product";
-			}
-		}
+	public void newproduct(@RequestBody Product product) {
 		productc.save(product);
-		return "new product are include";
+	}
+	@GetMapping("/allproduct")
+	public List<Product> getallproduct(){
+		return productc.findAll();
 	}
 	@GetMapping("/productsbyc/{id}")
 	public List<Product> getproductsbycategory(@PathVariable int id){
