@@ -5,3 +5,4 @@ For run the backend is necesary run in spring
 
 # Frontend
 For run this part is necessary run with ng serve 
+fro see the code of the front end go to https://github.com/anfdiazme/shop-front-end
